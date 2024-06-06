@@ -14,6 +14,9 @@ public class server{
     private static ArrayList<cliente> clientes;
     private static Pista pista;
 
+    /*
+     * Constructor, inicializa clientes y pista
+     */
     private server(){
         //se inicializa clientes
         server.clientes = new ArrayList<cliente>();
@@ -76,16 +79,31 @@ public class server{
         return allActive;
     }
 
-    public synchronized static void actualizarCarros(int jugador, int seccion, float distancia){
+    /**
+     * 
+     * @param jugador: numero de jugador
+     * @param seccion: numero de seccion
+     * @param distancia: distancia en float
+     */
+    public synchronized static void actualizarCarros(Integer jugador, Integer seccion, Float distancia){
         server.pista.carros.get(jugador).seccion = seccion;
         server.pista.carros.get(jugador).distancia = distancia;
     }
 
-
+    /**
+     * 
+     * @param isActive: bool de estado activo
+     * @param numCliente: numero del cliente
+     */
     public synchronized static void setClienteActive(Boolean isActive, Integer numCliente){
         server.clientes.get(numCliente).setIsActive(isActive);
     }
 
+    /**
+     * 
+     * @param numCliente: numero de cliente
+     * @return Socket de coneccion del cliente
+     */
     public static Socket getClienteAcceptSocket(Integer numCliente){
         try { 
             Socket inpuSocket = server.clientes.get(numCliente).getSocket().accept();
@@ -97,15 +115,25 @@ public class server{
         }
     }
 
+    /**
+     * 
+     * @return pista del server
+     */
     public static Pista getPista(){
         return pista;
     }
 
+    /**
+     * 
+     * @param color: stringo color (rojo, azul,blanco,morado)
+     */
     public static synchronized void agregaCarro(String color){
         server.pista.agregaCarro(color);
     }
 
-
+    /**
+     * Inicia sockets y threads para comunicacion con clientes
+     */
     public void serverRun(){
         try {
             Boolean close = false;

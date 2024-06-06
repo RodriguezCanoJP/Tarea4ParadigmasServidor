@@ -4,7 +4,8 @@ import javax.print.DocFlavor.INPUT_STREAM;
 
 public class cliente {
     private static Integer numClientes = 0;
-    
+   
+    //metodos estaticos
     public static void addCliente(){ 
         cliente.numClientes++;
     }
@@ -21,12 +22,14 @@ public class cliente {
     private Integer numCliente;
     private Boolean isActive;
 
-    public cliente(ServerSocket socket, int numCliente){
+    //constructor
+    public cliente(ServerSocket socket, Integer numCliente){
         this.socket = socket;
         this.numCliente = numCliente;
         this.isActive = false;
     }
 
+    //setters y getters
     public ServerSocket getSocket(){
         return this.socket;
     }

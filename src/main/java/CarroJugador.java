@@ -1,5 +1,7 @@
 public class CarroJugador extends Carro {
-    public CarroJugador (int velocidad,String color){
+
+    //constructor
+    public CarroJugador (Float velocidad,String color){
         this.velocidad = velocidad;
         this.color = color;
     }
@@ -15,7 +17,7 @@ public class CarroJugador extends Carro {
 
         velocidad -= 10;
         System.out.println("Frenando..." );
-        if (velocidad < 0) velocidad = 0;
+        if (velocidad < 0) velocidad = 0.0f;
             System.out.println("parado" + velocidad);
         
 

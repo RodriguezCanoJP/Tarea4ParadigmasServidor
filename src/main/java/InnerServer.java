@@ -25,7 +25,7 @@ public class InnerServer extends Thread {
 
                     ByteArrayOutputStream buffer = new ByteArrayOutputStream();
                     byte[] data = new byte[1024];
-                    int bytesRead;
+                    Integer bytesRead;
 
 
                     while ((bytesRead = in.read(data, 0, data.length)) != -1) {
@@ -52,11 +52,11 @@ public class InnerServer extends Thread {
                     }
 
 
-                    for(int i = 0; i < cliente.getNumClientes(); i++) {
+                    for(Integer i = 0; i < cliente.getNumClientes(); i++) {
                         JSONObject outputJson = new JSONObject();
                         if(i != clienteServerNum){
-                            int seccion = server.getPista().carros.get(i).seccion;
-                            float distancia = server.getPista().carros.get(i).distancia;
+                            Integer seccion = server.getPista().carros.get(i).seccion;
+                            Float distancia = server.getPista().carros.get(i).distancia;
                             String color = server.getPista().carros.get(i).color;
 
                             outputJson.put("seccion", seccion);

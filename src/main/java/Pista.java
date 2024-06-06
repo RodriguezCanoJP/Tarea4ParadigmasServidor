@@ -8,13 +8,15 @@ public class Pista {
     public ArrayList<Carro> carros;
     private ArrayList<Poder> poderes;
     private static PolePositionFactory factory;
-    
+   
+    //Constructor
     public Pista(Integer numSecciones){
         this.numSecciones = numSecciones;
         this.largoSeccion = new Float[numSecciones];
         this.curvaSeccion = new Float[numSecciones];
     }
 
+    //Setters y getters
     public void addLargo(Float largo, Integer seccion){
         this.largoSeccion[seccion] = largo;
     }
@@ -39,10 +41,6 @@ public class Pista {
         factory = new CarroFactory();
         this.carros.add(factory.crearCarro(color));
     }
-
-
-
-
 
     public void colocarHueco(){}
     public void colocarTurbo(){}
