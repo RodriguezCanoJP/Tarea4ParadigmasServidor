@@ -76,6 +76,11 @@ public class server{
         return allActive;
     }
 
+    public synchronized static void actualizarCarros(int jugador, int seccion, float distancia){
+        server.pista.carros.get(jugador).seccion = seccion;
+        server.pista.carros.get(jugador).distancia = distancia;
+    }
+
 
     public synchronized static void setClienteActive(Boolean isActive, Integer numCliente){
         server.clientes.get(numCliente).setIsActive(isActive);
@@ -91,6 +96,15 @@ public class server{
             return null;
         }
     }
+
+    public static Pista getPista(){
+        return pista;
+    }
+
+    public static synchronized void agregaCarro(String color){
+        server.pista.agregaCarro(color);
+    }
+
 
     public void serverRun(){
         try {

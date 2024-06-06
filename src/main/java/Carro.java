@@ -3,6 +3,7 @@ public abstract class Carro {
     protected Float distancia;
     protected float velocidad;
     protected float posicion;
+    protected int seccion;
     protected int posx;
     protected float curvatura;
     protected int vida;

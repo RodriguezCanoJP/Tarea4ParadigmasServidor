@@ -1,8 +1,13 @@
+import java.util.ArrayList;
+
 public class Pista {
 
     private Integer numSecciones;
     private Float[] largoSeccion;
-    private Float[] curvaSeccion; 
+    private Float[] curvaSeccion;
+    public ArrayList<Carro> carros;
+    private ArrayList<Poder> poderes;
+    private static PolePositionFactory factory;
     
     public Pista(Integer numSecciones){
         this.numSecciones = numSecciones;
@@ -30,14 +35,18 @@ public class Pista {
         return this.numSecciones;
     }
 
-    /*
-    PolePositionFactory factory;
-    Carro[] carros;
-    Poder[] poderes;
+    public synchronized void agregaCarro(String color){
+        factory = new CarroFactory();
+        this.carros.add(factory.crearCarro(color));
+    }
+
+
+
+
 
     public void colocarHueco(){}
     public void colocarTurbo(){}
     public void crear_auto(){}
     public void actualizarPosiciones(){}
-    */
+
 }

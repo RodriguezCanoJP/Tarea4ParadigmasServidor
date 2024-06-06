@@ -3,7 +3,7 @@ public class PolePositionFactory {
         return null;
     }
 
-    public Carro crearCarro(){
+    public Carro crearCarro(String color){
         return null;
     }
 
