@@ -1,6 +1,6 @@
 public class PoderVelocidad extends Poder {
     //constructuor
-    public PoderVelocidad(String tipo,int posicion,int sumaVelocidad){
+    public PoderVelocidad(String tipo,Integer posicion,Integer sumaVelocidad){
         
         this.tipo = tipo;
         this.posicion = posicion;

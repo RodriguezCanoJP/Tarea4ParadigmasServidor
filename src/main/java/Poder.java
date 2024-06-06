@@ -1,9 +1,9 @@
 public abstract  class Poder {
     //atributos
     protected String tipo;
-    protected int posicion;
-    protected int sumaVida;
-    protected int sumaVelocidad;
+    protected Integer posicion;
+    protected Integer sumaVida;
+    protected Integer sumaVelocidad;
     protected Carro[] suscriptores;
 
     //metodos abstractos
@@ -36,7 +36,7 @@ public abstract  class Poder {
         return posicion;
     }
 
-    public void setPosition(int posicion){
+    public void setPosition(Integer posicion){
         this.posicion = posicion;
     }
 
@@ -45,7 +45,7 @@ public abstract  class Poder {
         return sumaVida;
     }
 
-    public void setSumaVida(int sumaVida){
+    public void setSumaVida(Integer sumaVida){
         this.sumaVida = sumaVida;
     }
 
@@ -54,7 +54,7 @@ public abstract  class Poder {
         return sumaVelocidad;
     }
 
-    public void setSumaVelocidad(int sumaVelocidad){
+    public void setSumaVelocidad(Integer sumaVelocidad){
         this.sumaVelocidad = sumaVelocidad;
     }
 

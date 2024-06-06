@@ -2,7 +2,7 @@ public class PoderFactory extends PolePositionFactory{
     @Override
     public Poder crearPoder(){
         //logica de creacion de los poderes
-        boolean logica;
+        Boolean logica;
         Poder poder;
         logica=true;
 

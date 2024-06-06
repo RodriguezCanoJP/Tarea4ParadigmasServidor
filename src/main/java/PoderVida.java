@@ -1,6 +1,6 @@
 public class PoderVida extends Poder{
     //constructor
-    public PoderVida(String tipo,int posicion,int sumaVida){
+    public PoderVida(String tipo,Integer posicion,Integer sumaVida){
         
         this.tipo = tipo;
         this.posicion = posicion;

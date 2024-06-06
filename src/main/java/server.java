@@ -76,7 +76,7 @@ public class server{
         return allActive;
     }
 
-    public synchronized static void actualizarCarros(int jugador, int seccion, float distancia){
+    public synchronized static void actualizarCarros(Integer jugador, Integer seccion, Float distancia){
         server.pista.carros.get(jugador).seccion = seccion;
         server.pista.carros.get(jugador).distancia = distancia;
     }
