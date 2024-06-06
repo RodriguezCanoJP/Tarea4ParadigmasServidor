@@ -15,6 +15,11 @@ public class InnerServer extends Thread {
 
     @Override
     public void run(){
+        /*
+        comunicacion con los diferentes clientes. Se crea un buffer que lee byte por byte del input stream y lo convierte a string
+        divide ese string por las llaves que se esperan del objeto json y se utilizan los valores para actualizar las posiciones de los carros
+        envia un objeto json por el socket del server
+         */
         Boolean isClosed = true;
         Socket inputSocket = server.getClienteAcceptSocket(clienteServerNum);
 
@@ -31,16 +36,16 @@ public class InnerServer extends Thread {
                     while ((bytesRead = in.read(data, 0, data.length)) != -1) {
                         buffer.write(data, 0, bytesRead);
                         if (in.available() == 0) {
-                            break; // Exit loop if no more data is available
+                            break;
                         }
                     }
-                    // Convert buffer to string and print the received message
                     String receivedMessage = buffer.toString("UTF-8");
                     JSONObject inputJson = new JSONObject(receivedMessage);
                     JSONArray outputArray = new JSONArray();
 
 
                     if (inputJson.has("isActive")) {
+                        //espera un mensaje especifico del cliente para standby y el color que elige del carro
                         System.out.println("Activando cliente " + clienteServerNum);
                         server.setClienteActive(inputJson.getBoolean("isActive"), clienteServerNum);
                         server.agregaCarro(inputJson.getString("color"));
@@ -66,9 +71,9 @@ public class InnerServer extends Thread {
                         }
                     }
 
-                    try (OutputStreamWriter out = new OutputStreamWriter(inputSocket.getOutputStream(),  StandardCharsets.UTF_8)) {
-                        out.write(outputArray.toString());
-                    }
+                    //try (OutputStreamWriter out = new OutputStreamWriter(inputSocket.getOutputStream(),  StandardCharsets.UTF_8)) {
+                        //out.write(outputArray.toString());
+                    //}
 
                     buffer.close();
 
