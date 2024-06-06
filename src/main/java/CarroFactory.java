@@ -7,9 +7,9 @@ public class CarroFactory extends PolePositionFactory{
     public Carro crearCarro(String color){
         if(colores.contains(color) ){
             colores.remove(color);
-            return new CarroJugador(0,color);
+            return new CarroJugador(0.0f,color);
         }else{
-            return new CarroJugador(0,colores.get(0));
+            return new CarroJugador(0.0f,colores.get(0));
         }
     }
 

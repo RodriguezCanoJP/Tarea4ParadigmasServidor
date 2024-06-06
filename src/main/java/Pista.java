@@ -13,6 +13,7 @@ public class Pista {
         this.numSecciones = numSecciones;
         this.largoSeccion = new Float[numSecciones];
         this.curvaSeccion = new Float[numSecciones];
+        this.carros = new ArrayList<>();
     }
 
     public void addLargo(Float largo, Integer seccion){

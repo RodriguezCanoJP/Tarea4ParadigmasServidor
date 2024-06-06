@@ -20,7 +20,7 @@ public class server{
 
         //se lee valores de pista del json
         try {
-            Path pistaPath = Paths.get("src/main/java/resources/pista.json");
+            Path pistaPath = Paths.get("src/main/resources/pista.json");
             String pistaString = pistaPath.toAbsolutePath().toString();
             File pistaFile = new File(pistaString);
             Scanner pistaScanner = new Scanner(pistaFile);

@@ -1,5 +1,6 @@
 import java.io.*;
 import java.net.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 import org.json.*;
@@ -19,7 +20,6 @@ public class InnerServer extends Thread {
 
         try {
             InputStream in = inputSocket.getInputStream();
-            OutputStream out = inputSocket.getOutputStream();
             while (isClosed) {
                 try {
 
@@ -66,14 +66,9 @@ public class InnerServer extends Thread {
                         }
                     }
 
-                    byte[] responseBytes = responseMessage.getBytes("UTF-8");
-                    out.write(responseBytes);
-
-
-
-
-
-
+                    try (OutputStreamWriter out = new OutputStreamWriter(inputSocket.getOutputStream(),  StandardCharsets.UTF_8)) {
+                        out.write(outputArray.toString());
+                    }
 
                     buffer.close();
 

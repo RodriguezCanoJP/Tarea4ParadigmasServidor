@@ -1,12 +1,12 @@
 public abstract class Carro {
     //atributos
     protected Float distancia;
-    protected float velocidad;
-    protected float posicion;
-    protected int seccion;
-    protected int posx;
-    protected float curvatura;
-    protected int vida;
+    protected Float velocidad;
+    protected Float posicion;
+    protected Integer seccion;
+    protected Integer posx;
+    protected Float curvatura;
+    protected Integer vida;
     protected String color;
 
     //metodos
@@ -18,7 +18,7 @@ public abstract class Carro {
 
     public Carro(){
         this.vida = 3;
-        this.velocidad = 0;
+        this.velocidad = 0.0f;
         this.color = "rojo";
     }
 
@@ -31,19 +31,19 @@ public abstract class Carro {
     }
 
     //getters y setters
-    public int getVida(){
+    public Integer getVida(){
         return vida;
     }
-    public void setVida(int vida){
+    public void setVida(Integer vida){
         if (vida >= 0){
             this.vida = vida;
         }
     }
-    public float  getVelocidad(){
+    public float getVelocidad(){
 
         return velocidad;
     }
-    public void setVelocidad(int velocidad){
+    public void setVelocidad(Float velocidad){
 
         if(velocidad >= 0){
             this.velocidad = velocidad;

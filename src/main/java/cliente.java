@@ -21,7 +21,7 @@ public class cliente {
     private Integer numCliente;
     private Boolean isActive;
 
-    public cliente(ServerSocket socket, int numCliente){
+    public cliente(ServerSocket socket, Integer numCliente){
         this.socket = socket;
         this.numCliente = numCliente;
         this.isActive = false;
